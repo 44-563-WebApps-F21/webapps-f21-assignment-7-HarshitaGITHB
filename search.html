@@ -26,6 +26,7 @@
     <p style = color:rgb(134,18,47); padding:3px;>Click on the squares to search for wild life</p>
     <p id = "tries" style = color:rgb(43,61,226); padding:3px; >Number of tries is zero</p>
     <p id ="Distance" style = color:rgb(243,227,8) ; padding:3px;> Distance is unknown</p>
+    <button onclick="newGame()">Reset</button>
     <div class="row justify-content-center">
         <div class="row ">
             <div class="col-sm-2 shadow  mb-2"><img src="plant.jpg" id="col11" onclick="check(0)" alt="plant" width="200px" height="200px"></div>
@@ -116,6 +117,16 @@
           var distances = Math.abs(x2 - x1) + Math.abs(y2 - y1);
           return distances;
       }
+      function newGame() {
+            triesCount = 0
+            animalLocation = Math.floor(Math.random() * 23 + 0)
+            document.getElementById("tries").innerHTML = "Number of tries is 0."
+            for (var i = 0; i < 24; i++) {
+                if (ids[i] == ids[animalLocation])
+                    document.getElementById(ids[i]).src = "lion.jpg"
+
+            }
+        }
   </script>
 
     
